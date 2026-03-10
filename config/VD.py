@@ -1,0 +1,32 @@
+CONFIG = {
+    "canton": "VD",
+    # Excel columns: VD Einheit, NaiS_LFI, nais, nais1, nais2, hs, hsue
+    "excel_file": "VD_nais_einheiten_unique_v2_20250408.xlsx",
+    "excel_sheet": "Sheet1",
+    "excel_format": "nais1_nais2_hs",
+    "join_keys": ["VD Einheit"],
+    "shapefile": "VD/vdstandortstypenarrondiertV3joined_entw2.gpkg",
+    "raster_dem": "VD/VD_dem10m.tif",
+    "raster_slope": "VD/VD_slopeprz.tif",
+    "raster_radiation": "VD/VD_globradyyw.tif",
+    "raster_hs": "VD/VD_vegetationshoehenstufen1975.tif",
+    "taheute_file": "Tannenareale.shp",
+    "taheute_method": "overlay",
+    "storeg_file": "Waldstandortsregionen.shp",
+    "storeg_method": "sjoin",
+    "radiation_method": "quantile",
+    "dict_variant": "extended",
+    "filter_col": None,
+    "treeapp_col_start": 25,
+    "treeapp_col_end": -2,
+    "custom_hook": False,
+    "output_cols": [
+        "joinid", "VD Einheit", "taheute", "storeg",
+        "meanslopeprc", "slpprzrec", "rad", "radiation", "hs1975",
+        "nais", "nais1", "nais2", "mo", "ue", "hs", "tahs", "tahsue", "geometry",
+    ],
+    "treeapp_cols": [
+        "VD Einheit", "nais", "nais1", "nais2",
+        "mo", "ue", "tahs", "tahsue", "geometry",
+    ],
+}
